@@ -13,7 +13,7 @@ RUN apt-get update -y \
 
 COPY update_couchdb_cfg.py /tmp/update_couchdb_cfg.py
 RUN mkdir /var/run/couchdb \
- && python update_couchdb_cfg.py /etc/couchdb/default.ini
+ && python /tmp/update_couchdb_cfg.py /etc/couchdb/default.ini
 
 COPY monitrc /etc/monit/monitrc
 RUN chmod 700 /etc/monit/monitrc \
